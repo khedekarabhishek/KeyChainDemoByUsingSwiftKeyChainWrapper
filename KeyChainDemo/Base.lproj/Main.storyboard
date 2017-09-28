@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +12,57 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeyChainDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrl-U2-UBe">
+                                <rect key="frame" x="136" y="318.5" width="103" height="30"/>
+                                <state key="normal" title="Save Password"/>
+                                <connections>
+                                    <action selector="savePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQK-Cr-hBW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-Zp-Hhh">
+                                <rect key="frame" x="128" y="272.5" width="118" height="30"/>
+                                <state key="normal" title="Retrive Password"/>
+                                <connections>
+                                    <action selector="retrivePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2M-Uo-0wa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to9-Di-Rkd">
+                                <rect key="frame" x="151.5" y="413" width="71" height="30"/>
+                                <state key="normal" title="delete key"/>
+                                <connections>
+                                    <action selector="deleteKeyFromKeychain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wci-5j-B9R"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-uI-HW6">
+                                <rect key="frame" x="20" y="40" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rLP-Zp-Hhh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Qo-tr-bGj"/>
+                            <constraint firstItem="rrl-U2-UBe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7it-CF-tyF"/>
+                            <constraint firstItem="rrl-U2-UBe" firstAttribute="top" secondItem="rLP-Zp-Hhh" secondAttribute="bottom" constant="16" id="GSC-1W-JTV"/>
+                            <constraint firstItem="XYs-uI-HW6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIz-77-FGG"/>
+                            <constraint firstItem="to9-Di-Rkd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S4L-UI-dwQ"/>
+                            <constraint firstItem="XYs-uI-HW6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="TaX-f0-8yU"/>
+                            <constraint firstItem="rrl-U2-UBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XaQ-fr-kgv"/>
+                            <constraint firstItem="XYs-uI-HW6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bdX-YZ-C1d"/>
+                            <constraint firstItem="to9-Di-Rkd" firstAttribute="top" secondItem="rrl-U2-UBe" secondAttribute="bottom" constant="64.5" id="rx4-TI-md4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XYs-uI-HW6" secondAttribute="trailing" constant="20" id="y4q-jM-3f7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="txtfieldPassword" destination="XYs-uI-HW6" id="qBb-4u-6rM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
